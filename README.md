@@ -63,7 +63,13 @@ Add required dependencies for the jenkins package
 
 Downloads the GPG key required to verify the authenticity of Jenkins packages and saves it in the /usr/share/keyrings/ directory.
 
-     sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+     sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
 
 Add the Jenkins repository to your system's APT sources list and ensures that the repository is signed using the GPG key you downloaded
 
@@ -72,7 +78,7 @@ Add the Jenkins repository to your system's APT sources list and ensures that th
 
 Update and Install Jenkins and Maven
 
-    sudo apt update && sudo apt install jenkins maven -y
+    sudo apt update && sudo apt install maven -y
 
 
 ### Verify Installations and  Access Jenkins UI

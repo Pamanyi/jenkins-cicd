@@ -3,14 +3,14 @@ pipeline {
     environment {
         MAVEN_HOME = '/usr/share/maven'  // maven home directory.  Obtain home directory using mvn --version
         ARTIFACT_PATH = 'JJtechBatchApp/target/JJtechBatchApp.war'
-        TOMCAT_URL = 'http://54.147.46.25:8080/'  // replace with your tomcat url
+        TOMCAT_URL = 'http://52.202.26.71:8080/'  // replace with your tomcat url
 
     }
     stages {
         stage('Checkout Code') {
             steps {
                // replace git URL below with your git repo url
-                git branch: 'main', url: 'https://github.com/mecbob/jenkins-cicd.git'
+                git branch: 'main', url: 'https://github.com/Pamanyi/jenkins-cicd.git'
             }
         }
 
@@ -73,7 +73,7 @@ pipeline {
                     nexusArtifactUploader(
                         nexusVersion: 'nexus3',
                         protocol: 'http',
-                        nexusUrl: '100.26.31.212:8081/',  //replace me 
+                        nexusUrl: '3.90.0.235:8081/',  //replace me 
                         repository: repository,
                         groupId: groupId,
                         version: version,
