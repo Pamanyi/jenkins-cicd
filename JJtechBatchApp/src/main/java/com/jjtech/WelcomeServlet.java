@@ -14,7 +14,7 @@ public class WelcomeServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        response.getWriter().println("<h1>We made it work, we are officially Devops Engineer! go team!</h1>");
+        response.getWriter().println("<h1> Good job team! We made it work, we are officially Devops Engineer! go team!</h1>");
     }
 }
 

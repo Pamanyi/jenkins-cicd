@@ -33,6 +33,6 @@ public class WelcomeServletTest {
     public void testDoGet() throws Exception {
         welcomeServlet.doGet(request, response);
         verify(response).setContentType("text/html");
-        assertEquals("<h1>We made it work, we are officially Devops Engineer! go team!</h1>", responseWriter.toString().trim());
+        assertEquals("<h1>Good job team! We made it work, we are officially Devops Engineer! go team!</h1>", responseWriter.toString().trim());
     }
 }
